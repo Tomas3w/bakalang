@@ -1,3 +1,4 @@
+bakalang = {}
 
 -- returns the line and index of a line that corresponds to the given index
 function bakalang.getLineAndIndex(str, index)
