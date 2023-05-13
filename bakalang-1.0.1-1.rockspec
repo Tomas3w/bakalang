@@ -1,5 +1,5 @@
 package = "bakalang"
-version = "1.0-1"
+version = "1.0.1-1"
 source = {
    url = "git+https://github.com/Tomas3w/bakalang.git",
    tag = "v1.0",
@@ -14,7 +14,7 @@ description = {
    license = "MIT/X11"
 }
 dependencies = {
-   "lua >= 5.1, < 5.4"
+   "lua >= 5.1"
 }
 build = {
    type = "builtin",
