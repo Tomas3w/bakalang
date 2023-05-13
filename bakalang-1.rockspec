@@ -1,7 +1,8 @@
 package = "bakalang"
 version = "1.0-1"
 source = {
-   url = "git+https://github.com/Tomas3w/bakalang.git"
+   url = "git+https://github.com/Tomas3w/bakalang.git",
+   tag = "v1.0f",
 }
 description = {
    summary = "A basic libary for making baka preprocessors",
