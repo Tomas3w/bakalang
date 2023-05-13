@@ -6,15 +6,14 @@ source = {
 description = {
    summary = "A basic libary for making baka preprocessors",
    detailed = [[
-   A library to make baka preprocessors, this preprocessors can change the source code (or any other text file) using macros defined in the Lua programming language.
+   A library to make baka preprocessors, this preprocessors can change the source code (or any other text file, or even strings) using macros defined in the Lua programming language.
    See wiki (in the repository) for more details.
    ]],
    homepage = "https://github.com/Tomas3w/bakalang",
    license = "MIT/X11"
 }
 dependencies = {
-   "lua >= 5.1, < 5.4",
-   "luafilesystem"
+   "lua >= 5.1, < 5.4"
 }
 build = {
    type = "builtin",
