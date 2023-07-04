@@ -170,18 +170,14 @@ function bakalang.run_macro(code, flags, call, environment, offset, filename)
 	own_environment = bakalang.deep_copy_table(own_environment)
 
 	portion = code:sub(call.first_char + offset, call.last_char + offset)
-	--new_text, new_environment = bakalang.macro_functions[call.name](code, flags, call, own_environment, environment, offset, portion)
-	success, new_text, new_environment = pcall(bakalang.macro_functions[call.name], code, flags, call, own_environment, environment, offset, portion)
+	success, new_text = pcall(bakalang.macro_functions[call.name], code, flags, call, own_environment, environment, offset, portion)
 	if not success then
 		bakalang.exinfo("["..bakalang.macro_symbol..call.name.."] "..new_text, code, call.first_char + offset, filename)
 	end
 	if type(new_text) ~= 'string' then
 		bakalang.exinfo("["..bakalang.macro_symbol..call.name.."] new text returned not of type string", code, call.first_char + offset, filename)
 	end
-	if type(new_environment) ~= 'table' then
-		bakalang.exinfo("["..bakalang.macro_symbol..call.name.."] environment returned not of type table", code, call.first_char + offset, filename)
-	end
-	return new_text, new_environment
+	return new_text, own_environment
 end
 
 -- process the code searching for macro function calls
