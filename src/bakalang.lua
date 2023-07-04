@@ -281,13 +281,13 @@ end
 -- process a source file until there is no macro function call left, this can do bakalang.max_iterations iterations before breaking
 function bakalang.process_code(code, flags, filename)
 	if bakalang.get_comment_handler == nil then
-		error("bakalang.get_comment_handler isn't defined")
+		error("bakalang.get_comment_handler isn't defined, you should define it to use process_code")
 	end
 	if bakalang.global_environment == nil then
-		error("bakalang.global_environment isn't defined")
+		error("bakalang.global_environment isn't defined, you should define it to use process_code")
 	end
 	if bakalang.macro_functions == nil then
-		error("bakalang.global_environment isn't defined") 
+		error("bakalang.macro_functions isn't defined, you should define it to use process_code") 
 	end
 	bakalang.macro_symbol = bakalang.macro_symbol or '@'
 	bakalang.max_iterations = bakalang.max_iterations or 1000
@@ -295,13 +295,9 @@ function bakalang.process_code(code, flags, filename)
 	local ncode = code
 	local n_environments = {{first_char = 1, last_char = #code}}
 
-	--print("Original text:")
-	--print(code)
 	global_iteration = 0
 	while true do
 		ncode, n_environments = bakalang.process_code_once(ncode, n_environments, flags, filename)
-		--print("Resulting code:")
-		--print(ncode)
 		if #n_environments == 0 then
 			break
 		end
