@@ -1,4 +1,4 @@
--- this is a simple example code it uses the library to parse a replace the single macro function hello()
+-- this is a simple example code, it uses the library to parse a replace the single macro function hello()
 -- it implements a simple comment handler that allows for skipping text after ;
 -- it also defines an empty global_environment and it process code directly from a string
 require 'bakalang'
