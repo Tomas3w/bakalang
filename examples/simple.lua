@@ -3,7 +3,7 @@
 -- it also defines an empty global_environment and it process code directly from a string
 require 'bakalang'
 
-function hello()
+function hello(code, flags, call, own_environment, parent_environment, offset, portion)
 	return 'Hello world'
 end
 
